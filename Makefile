@@ -1,9 +1,9 @@
-CDLIC_FILE = /usr/local/psxsdk/share/licenses/infoeur.dat
+CDLIC_FILE = /usr/local/psxsdk/share/licenses/infousa.dat
 
 all:
 	mkdir -p cd_root
 	psx-gcc padtest.c -o padtest.elf
-	elf2exe padtest.elf padtest.exe -mark_eur
+	elf2exe padtest.elf padtest.exe
 	cp padtest.exe cd_root
 	systemcnf padtest.exe > cd_root/system.cnf
 	mkisofs -o padtest.hsf -V padtest -sysid PLAYSTATION cd_root
